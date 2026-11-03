@@ -1,0 +1,39 @@
+function Audit=ValidateG4Seed1Identity_v1(Request,Contract)
+% Exact immutable roster-index-1 identity gate; no substitution is allowed.
+arguments
+    Request (1,1) struct
+    Contract (1,1) struct
+end
+required={'RosterIndex','Seed','SeedPayload','SeedPayloadSHA256','RandomModelVersion'};
+for k=1:numel(required)
+    assert(isfield(Request,required{k}),'G4Seed1Auth:SeedIdentityMissing','Missing %s.',required{k});
+end
+assert(double(Request.RosterIndex)==1,'G4Seed1Auth:UnauthorizedRosterIndex','Only roster index 1 is eligible.');
+assert(isa(Request.Seed,'uint32') && isscalar(Request.Seed), ...
+    'G4Seed1Auth:SeedDomainMismatch','Seed must be a uint32 scalar.');
+assert(Request.Seed==uint32(Contract.Seed1.Seed), ...
+    'G4Seed1Auth:SeedMismatch','Seed differs from immutable roster index 1.');
+canonicalPayload=sprintf(['MirrorSymmetry.G4.SeedRoster.S2.v1\nNamespace=%s\n' ...
+    'BaseSeed=%u\nIndex=1\nRandomModelVersion=%u'],char(string(Contract.Seed1.ProjectNamespace)), ...
+    uint32(Contract.Seed1.BaseSeed),uint32(Contract.Seed1.RandomModelVersion));
+assert(strcmp(char(string(Request.SeedPayload)),canonicalPayload), ...
+    'G4Seed1Auth:PayloadMismatch','Canonical S2 payload text mismatch.');
+[replaySHA,replaySeed]=sha256PayloadLocal(canonicalPayload);
+assert(strcmpi(replaySHA,string(Contract.Seed1.PayloadSHA256)) && replaySeed==uint32(Contract.Seed1.Seed), ...
+    'G4Seed1Auth:SeedGeneratorReplayMismatch','S2 SHA-256/uint32 replay differs from frozen roster.');
+assert(strcmpi(string(Request.SeedPayloadSHA256),string(Contract.Seed1.PayloadSHA256)), ...
+    'G4Seed1Auth:PayloadSHAMismatch','Canonical S2 payload SHA mismatch.');
+assert(double(Request.RandomModelVersion)==double(Contract.Seed1.RandomModelVersion), ...
+    'G4Seed1Auth:RandomModelVersionMismatch','RandomModelVersion mismatch.');
+Audit=struct('RosterIndex',1,'Seed',Request.Seed,'SeedDomain',"uint32", ...
+    'PayloadSHA256',string(Request.SeedPayloadSHA256),'RandomModelVersion',double(Request.RandomModelVersion), ...
+    'SeedGeneratorReplay',"EXACT_FROZEN_REPLAY",'ReplaySHA256',replaySHA, ...
+    'ReplaySeed',replaySeed,'NoReplacement',true,'PASS',true);
+end
+function [hex,seed]=sha256PayloadLocal(payload)
+md=java.security.MessageDigest.getInstance('SHA-256');
+digest=typecast(md.digest(uint8(unicode2native(payload,'UTF-8'))),'uint8');
+hex=string(lower(reshape(dec2hex(digest,2).',1,[])));
+seed=uint32(digest(1))*uint32(16777216)+uint32(digest(2))*uint32(65536)+ ...
+    uint32(digest(3))*uint32(256)+uint32(digest(4));
+end
