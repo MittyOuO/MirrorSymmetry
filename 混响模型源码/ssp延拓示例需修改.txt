@@ -1,0 +1,63 @@
+function SSPFinal = adjustSSPToWaterDepth(app, rawSSP, waterDepth)
+            % 将内置/导入 SSP 调整到用户输入海深。
+            % 1) 原始最大深度 >= 海深：截断到海深，并在海深处补插值点；
+            % 2) 原始最大深度 <  海深：保留实测段，深水扩展段不再用实测尾部线性外推，
+            %    而采用《计算海洋声学》中常用的 Munk canonical sound-speed profile 形状。
+            %
+            % 深水扩展采用连续拼接：
+            %   c_ext(z) = c_meas(z_max) + [c_Munk(z) - c_Munk(z_max)]
+            % 这样保证在原始 SSP 最大深度 z_max 处声速连续，同时深水段梯度由 Munk 理论剖面控制。
+
+            rawSSP = app.ValidateAndFormatSSP(rawSSP);
+            z = rawSSP(:,1);
+            c = rawSSP(:,2);
+
+            if waterDepth <= z(end) + 1e-6
+                keep = z < waterDepth;
+                zNew = z(keep);
+                cNew = c(keep);
+                cBottom = interp1(z, c, waterDepth, 'pchip');
+                SSPFinal = [zNew(:), cNew(:); waterDepth, cBottom];
+            else
+                zMax = z(end);
+                cMax = c(end);
+
+                % 深水段采样间隔：尽量保持与原 SSP 尾段分辨率一致，但限制在 25–100 m，避免图像过稀或过密。
+                if numel(z) >= 2
+                    dzRaw = median(diff(z));
+                    if ~isfinite(dzRaw) || dzRaw <= 0
+                        dzRaw = 50;
+                    end
+                else
+                    dzRaw = 50;
+                end
+                dzExt = min(max(dzRaw, 25), 100);
+
+                zExt = (zMax + dzExt : dzExt : waterDepth).';
+                if isempty(zExt) || abs(zExt(end) - waterDepth) > 1e-6
+                    zExt = [zExt; waterDepth];
+                end
+
+                cMunkExt = app.munkCanonicalSoundSpeedLocal(zExt);
+                cMunkRef = app.munkCanonicalSoundSpeedLocal(zMax);
+                cExt = cMax + (cMunkExt - cMunkRef);
+
+                SSPFinal = [z(:), c(:); zExt(:), cExt(:)];
+            end
+
+            SSPFinal = app.ValidateAndFormatSSP(SSPFinal);
+        end
+
+        function c = munkCanonicalSoundSpeedLocal(app, z)
+            % Munk canonical sound-speed profile.
+            % c(z) = c0 * [1 + epsilon * (eta - 1 + exp(-eta))]
+            % eta = 2*(z-zc)/B
+            % 默认深海声道轴 zc=1300 m，尺度 B=1300 m，epsilon=0.00737。
+            z = double(z);
+            c0 = 1500;
+            epsM = 0.00737;
+            zc = 1300;
+            B = 1300;
+            eta = 2*(z - zc)/B;
+            c = c0 .* (1 + epsM .* (eta - 1 + exp(-eta)));
+        end

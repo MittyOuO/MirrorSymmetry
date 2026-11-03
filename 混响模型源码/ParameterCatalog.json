@@ -1,0 +1,335 @@
+[
+  {
+    "englishId": "Bottom.mode",
+    "chineseName": "底质输入模式",
+    "jsonPath": "Bottom.mode",
+    "allowedValues": [
+      "manual",
+      "preset",
+      "custom"
+    ],
+    "defaultValue": "preset",
+    "unit": "-",
+    "modelField": "Sediment",
+    "physicalMeaning": "手动输入或从底质库解析地声参数"
+  },
+  {
+    "englishId": "Bottom.type",
+    "chineseName": "底质类型",
+    "jsonPath": "Bottom.type",
+    "allowedValues": [
+      "south_china_sea_silt",
+      "theoretical_clay",
+      "high_water_content_soft_mud",
+      "typical_soft_clay",
+      "dense_clay",
+      "apl_silty_clay",
+      "apl_sandy_clay",
+      "slightly_positive_speed_clay",
+      "dense_clay_silt_mix",
+      "compacted_clay",
+      "indian_ocean_silt",
+      "fine_sand",
+      "gravel"
+    ],
+    "defaultValue": "south_china_sea_silt",
+    "unit": "-",
+    "modelField": "Sediment.cB/rhoB/alphaB",
+    "physicalMeaning": "预设底质英文标识"
+  },
+  {
+    "englishId": "Scattering.miuMode",
+    "chineseName": "散射系数模式",
+    "jsonPath": "Scattering.miuMode",
+    "allowedValues": [
+      "manual",
+      "smooth",
+      "low_roughness",
+      "low_to_medium_roughness",
+      "medium_roughness",
+      "medium_to_high_roughness",
+      "high_roughness",
+      "very_high_roughness"
+    ],
+    "defaultValue": "manual",
+    "unit": "-",
+    "modelField": "InputParams.Miu",
+    "physicalMeaning": "选择或手动指定散射系数"
+  },
+  {
+    "englishId": "Scattering.bottomSlopeMode",
+    "chineseName": "海底坡度模式",
+    "jsonPath": "Scattering.bottomSlopeMode",
+    "allowedValues": [
+      "manual",
+      "flat",
+      "very_gentle_slope",
+      "gentle_slope",
+      "steep_slope"
+    ],
+    "defaultValue": "manual",
+    "unit": "-",
+    "modelField": "InputParams.Tht",
+    "physicalMeaning": "手动模式优先读取bottomRmsSlopeRad；核心统一使用弧度，旧bottomRmsSlopeDeg仅作兼容"
+  },
+  {
+    "englishId": "Beam.ArrayType",
+    "chineseName": "阵型类型",
+    "jsonPath": "Beam.ArrayType",
+    "allowedValues": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "defaultValue": 1,
+    "unit": "-",
+    "modelField": "Beam/ArrayGeom",
+    "physicalMeaning": "1垂直线阵、2水平线阵、3圆柱阵、4自定义主瓣"
+  },
+  {
+    "englishId": "Beam.fBeam",
+    "chineseName": "阵列波束形成频率",
+    "jsonPath": "Beam.fBeam",
+    "allowedValues": [
+      "positive scalar"
+    ],
+    "defaultValue": 500,
+    "unit": "Hz",
+    "modelField": "InputParams.Beam.fBeam/BTRParams.fBeam",
+    "physicalMeaning": "用户手动输入且不会被发射信号覆盖"
+  },
+  {
+    "englishId": "Beam.sideRangeDeg",
+    "chineseName": "俯仰旁瓣范围",
+    "jsonPath": "Beam.sideRangeDeg",
+    "allowedValues": [
+      "empty",
+      "2x2 ordered matrix"
+    ],
+    "defaultValue": "[]",
+    "unit": "deg",
+    "modelField": "InputParams.Beam.SideRange",
+    "physicalMeaning": "模型俯仰角顺序为[下外 下内;上内 上外]；空数组表示上下零宽旁瓣"
+  },
+  {
+    "englishId": "Beam.sideDownDb",
+    "chineseName": "俯仰旁瓣抑制",
+    "jsonPath": "Beam.sideDownDb",
+    "allowedValues": [
+      "finite scalar <= 0",
+      "two-element [lower upper]"
+    ],
+    "defaultValue": [
+      0,
+      0
+    ],
+    "unit": "dB",
+    "modelField": "InputParams.Beam.ElevSideDown_dB",
+    "physicalMeaning": "下、上旁瓣分别抑制；复幅度使用10^(dB/20)，标量仍兼容"
+  },
+  {
+    "englishId": "Beam.azimuthSearchRangeDeg",
+    "chineseName": "水平主瓣范围",
+    "jsonPath": "Beam.azimuthSearchRangeDeg",
+    "allowedValues": [
+      "two finite values"
+    ],
+    "defaultValue": [
+      -180,
+      180
+    ],
+    "unit": "deg",
+    "modelField": "InputParams.Beam.AzimuthRange",
+    "physicalMeaning": "水平左、右主瓣边界；[-180,180]表示水平全向"
+  },
+  {
+    "englishId": "Beam.AzSideRangeDeg",
+    "chineseName": "水平旁瓣范围",
+    "jsonPath": "Beam.AzSideRangeDeg",
+    "allowedValues": [
+      "empty",
+      "2x2 ordered matrix"
+    ],
+    "defaultValue": "[]",
+    "unit": "deg",
+    "modelField": "InputParams.Beam.AzimuthSideRange",
+    "physicalMeaning": "顺序为[左外 左内;右内 右外]；空数组表示左右零宽旁瓣"
+  },
+  {
+    "englishId": "Beam.AzSideDownDb",
+    "chineseName": "水平旁瓣抑制",
+    "jsonPath": "Beam.AzSideDownDb",
+    "allowedValues": [
+      "finite scalar <= 0",
+      "two-element [left right]"
+    ],
+    "defaultValue": [
+      0,
+      0
+    ],
+    "unit": "dB",
+    "modelField": "InputParams.Beam.AzimuthSideDown_dB",
+    "physicalMeaning": "左、右旁瓣分别抑制；复幅度使用10^(dB/20)，标量仍兼容"
+  },
+  {
+    "englishId": "Array.receiverPitchDeg",
+    "chineseName": "接收水平线阵姿态角",
+    "jsonPath": "Array.receiverPitchDeg",
+    "allowedValues": [
+      "finite scalar, abs(value) < 90"
+    ],
+    "defaultValue": 0,
+    "unit": "deg",
+    "modelField": "InputParams.TowedArray.PitchDeg",
+    "physicalMeaning": "用户正值表示远离声源端向上；内部按正深度坐标取负值"
+  },
+  {
+    "englishId": "Array.headingDeg",
+    "chineseName": "接收水平线阵航向角",
+    "jsonPath": "Array.headingDeg",
+    "allowedValues": [
+      "finite scalar"
+    ],
+    "defaultValue": 0,
+    "unit": "deg",
+    "modelField": "InputParams.TowedArray.ArrayHeadingDeg",
+    "physicalMeaning": "接收水平线阵在水平面内的航向角"
+  },
+  {
+    "englishId": "Signal.type",
+    "chineseName": "信号类型",
+    "jsonPath": "Signal.type",
+    "allowedValues": [
+      "CW",
+      "HFM",
+      "LFM",
+      "HFM_CW",
+      "CW_HFM",
+      "custom"
+    ],
+    "defaultValue": "HFM_CW",
+    "unit": "-",
+    "modelField": "TxSigInput.sigType",
+    "physicalMeaning": "自动决定传播频率：单分量一次；组合信号中CW在HFM带内时共用CW频率，带外时计算两个频率"
+  },
+  {
+    "englishId": "PlatformMotion.dopplerMode",
+    "chineseName": "多普勒模式",
+    "jsonPath": "PlatformMotion.dopplerMode",
+    "allowedValues": [
+      "one_way",
+      "two_way",
+      "bistatic"
+    ],
+    "defaultValue": "two_way",
+    "unit": "-",
+    "modelField": "InputParams.DopplerMode",
+    "physicalMeaning": "发射信号时间缩放的径向速度模式"
+  },
+  {
+    "englishId": "Output.saveSelection",
+    "chineseName": "输出选择",
+    "jsonPath": "Output.saveSelection",
+    "allowedValues": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "defaultValue": 0,
+    "unit": "-",
+    "modelField": "InputParams.OutputSelection",
+    "physicalMeaning": "0不保存，1时响fig，2时响bin，3时响mat，4 BTR fig，5 BTR mat"
+  },
+  {
+    "englishId": "Environment.sspPath",
+    "chineseName": "声速剖面文件",
+    "jsonPath": "Environment.sspPath",
+    "allowedValues": [
+      ".mat",
+      ".txt",
+      ".csv"
+    ],
+    "defaultValue": "env/deep_sea_ssp_0_2000m.txt",
+    "unit": "-",
+    "modelField": "InputParams.SSP",
+    "physicalMeaning": "读取、校验并截断或连续Munk延拓至海深"
+  },
+  {
+    "englishId": "Environment.waterDepth",
+    "chineseName": "海深",
+    "jsonPath": "Environment.waterDepth",
+    "allowedValues": [
+      "positive scalar"
+    ],
+    "defaultValue": 4500,
+    "unit": "m",
+    "modelField": "InputParams.WaterDepth",
+    "physicalMeaning": "SSP终点及BELLHOP深度盒基准"
+  },
+  {
+    "englishId": "Environment.modelType",
+    "chineseName": "边界混响类型",
+    "jsonPath": "Environment.modelType",
+    "allowedValues": [
+      1,
+      2
+    ],
+    "defaultValue": 1,
+    "unit": "-",
+    "modelField": "InputParams.OptionBorder",
+    "physicalMeaning": "1仅海底混响；2海底加海面混响，海面项为NRL粗糙界面与风生气泡云体积散射的功率和"
+  },
+  {
+    "englishId": "SeaSurface.seaState",
+    "chineseName": "蒲福海况等级",
+    "jsonPath": "SeaSurface.seaState",
+    "allowedValues": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "defaultValue": 2,
+    "unit": "Beaufort",
+    "modelField": "InputParams.SeaState/InputParams.U",
+    "physicalMeaning": "按标准10 m风速区间解析；显式风速不在该区间时使用区间代表风速，从而使海况控制气泡云体积附加量"
+  },
+  {
+    "englishId": "SeaSurface.windSpeed",
+    "chineseName": "10 m风速",
+    "jsonPath": "SeaSurface.windSpeed",
+    "allowedValues": [
+      "finite scalar >= 0"
+    ],
+    "defaultValue": 1.8,
+    "unit": "m/s",
+    "modelField": "InputParams.U",
+    "physicalMeaning": "位于所选海况标准区间内时作为NRL模型精确风速，否则由seaState代表风速替代；气泡云项在U<=3 m/s时为零"
+  },
+  {
+    "englishId": "Computation.SkipFastRL",
+    "chineseName": "跳过快速RL",
+    "jsonPath": "Computation.SkipFastRL",
+    "allowedValues": [
+      true,
+      false
+    ],
+    "defaultValue": true,
+    "unit": "-",
+    "modelField": "InputParams.SkipFastRL",
+    "physicalMeaning": "true时FastRLCompute调用次数为0"
+  }
+]

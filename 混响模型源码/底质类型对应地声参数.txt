@@ -1,0 +1,26 @@
+ case  "南海粉砂质"
+Sediment = struct('cB',1560,'rhoB',1.80,'alphaB',0.05);
+ case "理论黏土质"
+  Sediment = struct('cB',1500,'rhoB',1.60,'alphaB',0.50);
+  case "高含水软泥/极软黏土"
+ Sediment = struct('cB',1455,'rhoB',1.53,'alphaB',0.02);
+ case  "典型黏土质软底"
+Sediment = struct('cB',1476,'rhoB',1.66,'alphaB',0.04);
+case "较密实黏土质底"
+Sediment = struct('cB',1508,'rhoB',1.77,'alphaB',0.06);
+ case "APL 等效粉质黏土"
+   Sediment = struct('cB',1474,'rhoB',1.17,'alphaB',0.09);
+ case "APL 等效砂质黏土"
+  Sediment = struct('cB',1527,'rhoB',1.38,'alphaB',0.13);
+case "轻度正声速差黏土质底"
+  Sediment = struct('cB',1530,'rhoB',1.7,'alphaB',0.13);
+  case "密实黏土—粉砂混合底"
+ Sediment = struct('cB',1575,'rhoB',1.80,'alphaB',0.08);
+case "压实黏土"
+Sediment = struct('cB',1620,'rhoB',1.90,'alphaB',0.25);
+  case "印度洋粉砂质"
+ Sediment = struct('cB',1580,'rhoB',2.05,'alphaB',0.30);
+case "细砂质"
+Sediment = struct('cB',1650,'rhoB',1.90,'alphaB',0.25);
+
+

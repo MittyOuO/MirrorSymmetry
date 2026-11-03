@@ -1,0 +1,236 @@
+{
+  "File": {
+    "outputPath": "work/unused"
+  },
+  "Simulation": {
+    "fsSim": 2000
+  },
+  "Signal": {
+    "type": "HFM_CW",
+    "frequency": 700,
+    "cwPulseWidth": 1,
+    "startFrequency": 400,
+    "endFrequency": 600,
+    "sweepType": "up",
+    "customPath": "",
+    "hfmPulseWidth": 2
+  },
+  "Beam": {
+    "ArrayType": 1,
+    "fBeam": 500,
+    "sideRangeDeg": [],
+    "sideDownDb": [
+      0,
+      0
+    ],
+    "azimuthSearchRangeDeg": [
+      -180,
+      180
+    ],
+    "AzSideRangeDeg": [],
+    "AzSideDownDb": [
+      0,
+      0
+    ],
+    "centerDepth": 50,
+    "customMainBeam": {
+      "lowerDeg": -80,
+      "upperDeg": -60
+    },
+    "verticalArray": {
+      "M": 5,
+      "D": 1.5,
+      "c": 1500,
+      "thetaDeg": -30,
+      "tiltDeg": 0
+    },
+    "horiArray": {
+      "M": 8,
+      "D": 0.5,
+      "c": 1500,
+      "phiDeg": 0,
+      "tiltDeg": 0
+    },
+    "cylinArray": {
+      "ringElementCount": 8,
+      "verticalLayerCount": 4,
+      "r": 0.5,
+      "H": 3,
+      "c": 1500,
+      "phiDeg": 0,
+      "thetaDeg": 0,
+      "tiltDeg": 0
+    }
+  },
+  "Geometry": {
+    "sourceDepth": 20,
+    "receiverDepth": 20,
+    "transceiverRange": 100
+  },
+  "Array": {
+    "elementCount": 16,
+    "spacing": 1.5,
+    "displayElementIndex": 8,
+    "receiverPitchDeg": 0,
+    "headingDeg": 0
+  },
+  "Environment": {
+    "modelType": 1,
+    "sspType": 2,
+    "sspPath": "../env/deep_sea_ssp_0_2000m.txt",
+    "waterDepth": 200
+  },
+  "Bottom": {
+    "mode": "preset",
+    "type": "south_china_sea_silt",
+    "Cb": 1580,
+    "Alphab": 0.3,
+    "Rhob": 1.8,
+    "rmsSlope": 0
+  },
+  "Scattering": {
+    "miuMode": "low_roughness",
+    "miu": -32,
+    "bottomSlopeMode": "very_gentle_slope",
+    "bottomRmsSlopeDeg": 9,
+    "roughnessDb": -10
+  },
+  "SeaSurface": {
+    "frequencySpread": false,
+    "windSpeed": 1.8,
+    "seaState": 2,
+    "spreadStrength": 1,
+    "baseSigmaPerWind": 0.004,
+    "powerLaw": 1.15,
+    "maxSigmaTime": 0.08,
+    "preserveEnergy": true
+  },
+  "PlatformMotion": {
+    "enable": false,
+    "speedKn": 2,
+    "dopplerMode": "two_way",
+    "dopplerCosine": 1,
+    "timeSpreadMs": 0
+  },
+  "Computation": {
+    "RunMode": 2,
+    "SkipFastRL": true,
+    "Rmax": 600,
+    "TWindow": 0.4,
+    "TWindowCompute": 0.4,
+    "TWindowDisplay": 0.4
+  },
+  "Intensity": {
+    "sourceLevel": 231,
+    "environmentNoise": 50,
+    "ampGain": 36,
+    "sensitivity": -162
+  },
+  "Output": {
+    "saveSelection": 0
+  },
+  "BTR": {
+    "enable": false,
+    "ScanAngles": [
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0,
+      22.0,
+      24.0,
+      26.0,
+      28.0,
+      30.0,
+      32.0,
+      34.0,
+      36.0,
+      38.0,
+      40.0,
+      42.0,
+      44.0,
+      46.0,
+      48.0,
+      50.0,
+      52.0,
+      54.0,
+      56.0,
+      58.0,
+      60.0,
+      62.0,
+      64.0,
+      66.0,
+      68.0,
+      70.0,
+      72.0,
+      74.0,
+      76.0,
+      78.0,
+      80.0,
+      82.0,
+      84.0,
+      86.0,
+      88.0,
+      90.0,
+      92.0,
+      94.0,
+      96.0,
+      98.0,
+      100.0,
+      102.0,
+      104.0,
+      106.0,
+      108.0,
+      110.0,
+      112.0,
+      114.0,
+      116.0,
+      118.0,
+      120.0,
+      122.0,
+      124.0,
+      126.0,
+      128.0,
+      130.0,
+      132.0,
+      134.0,
+      136.0,
+      138.0,
+      140.0,
+      142.0,
+      144.0,
+      146.0,
+      148.0,
+      150.0,
+      152.0,
+      154.0,
+      156.0,
+      158.0,
+      160.0,
+      162.0,
+      164.0,
+      166.0,
+      168.0,
+      170.0,
+      172.0,
+      174.0,
+      176.0,
+      178.0,
+      180.0
+    ],
+    "BTRFs": 10,
+    "SmoothTime": 0.2,
+    "IncludeDirect": false,
+    "NormalizeDB": true
+  },
+  "Runtime": {
+    "TempWorkDir": "work/unused_temp",
+    "KeepTempFiles": false
+  }
+}

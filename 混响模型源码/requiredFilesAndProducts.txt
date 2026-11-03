@@ -1,0 +1,65 @@
+Entry: ZSDXReverbExeMain.m
+
+Required files:
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\AddWaterColumnVolumeReverb.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\AdjustSSPToWaterDepth.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ApplySurfaceDynamicSpread.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ApplyTimeSmearing.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BTRfromEvents.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BuildBeamWeightModelV2.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BuildFluctuatingEnvironmentalNoise.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BuildHLASteeringVector.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BuildInputParamsFromJson.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\BuildTowedArrayGeometry.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\CompactBTREventTable.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ComputeEventArrayPhase.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ComputeNoisyDisplayFromBeamResponses.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ConfigureArrayBeam.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\FastRLCompute.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\GenerateTxSignal.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\GetBeamWeight.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\GetBottomPreset.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ImpulseResponse.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ImpulseResponseChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\LoadSSPFile.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\MunkCanonicalSoundSpeed.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\PreparePropagationChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ReadJsonUtf8.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResetEnvBottom.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResetEnvTop.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResolveBTRParameters.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResolveBeamOpenAngle.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResolveFrequencyChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResolveScatteringPreset.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ResolveSeaSurfaceWind.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\RunReverbSimulation.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SaveZSDXOutputs.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ScatterFunc.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SharedScatterUnitValue.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SigCalcuBottom.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SigCalcuBottomChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SigCalcuSurface.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SigCalcuSurfaceChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SynthesizeBTRChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\SynthesizeFrequencyChannels.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\TriAngle.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ValidateAndFormatSSP.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ValidateBeamRanges.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ValidateTowedArrayGeometry.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\WidebandBTRKernel.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\WriteJsonUtf8.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\ZSDXReverbExeMain.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\bellhop.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\read_arrivals_asc.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\sssbub.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\sssint.m
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\sssnrl.m
+
+Required products:
+MATLAB | 25.2 | 
+Signal Processing Toolbox | 25.2 | 
+Statistics and Machine Learning Toolbox | 25.2 | 
+Parallel Computing Toolbox | 25.2 | P
+
+Explicit non-MATLAB assets:
+D:\AWork\PhD2nd\311\最终验收版\工作记录\App测试记录\testSince1013\Codex_TwoFileNoise_20261013\staging\exe_source\bellhop.exe
